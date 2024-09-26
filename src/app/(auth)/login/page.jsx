@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 export default function page() {
   const router = useRouter();
@@ -20,8 +21,8 @@ export default function page() {
 
   const onLogin = async () => {
     try {
-      await post("http://localhost:3000/api/login", user);
-      router.replace("/admin");
+      await signIn("credentials", user);
+      router.push("/admin");
     } catch (error) {
       console.log("Login failed", error.message);
     }

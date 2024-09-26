@@ -1,4 +1,5 @@
-import DataTable from "@/components/Table";
+"use client";
+import DataTable from "@/components/AdminTable";
 
 export default function page() {
   return <DataTable />;

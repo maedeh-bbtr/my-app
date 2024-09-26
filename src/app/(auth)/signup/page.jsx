@@ -23,7 +23,7 @@ export default function page() {
 
   const onSignup = async () => {
     try {
-      await axios.post("http://localhost:3000/api/signup", user);
+      await axios.post("http://localhost:3000/api/auth/signup", user);
       console.log("logged in");
 
       router.push("/");
